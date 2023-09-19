@@ -1,0 +1,217 @@
+/*Body*/
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+  }
+  
+  body {
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(77, 77, 77, 0.829);
+  }
+  /*Navbar & Burger menu */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    width: 100%;
+    background-color: #0000004c;
+}
+.navbar a {
+    color: rgb(255, 255, 255);
+}
+.navbar .logo {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 9px;
+    margin-left: 34px;
+    padding-bottom: 10px;
+}
+.navbar .links ul {
+    display: flex;
+    align-items: center;
+    padding-top: 14px;
+}
+.navbar .links ul li {
+    margin:  5px 25px;
+    right: 0;
+}
+.navbar .links ul li.active a {
+    color: rgb(255, 0, 0);
+    font-size: 600;
+}
+.navbar .burger {
+    display: none;
+    position: absolute;
+    right: 45px;
+    width: 36px;
+    color: white;
+    top: 30px;
+}
+.register {
+    display: flex;
+    padding-right: 15px;
+    padding-top: 22px;
+}
+.navbutton{
+    margin-right: 10px;
+}
+.profileimg {
+    width: 40px;
+    border-radius: 50%;
+    border: 2px solid white;
+    top: 10px;
+}
+/*Formulaire */
+.wrapper {
+    width: 400px;
+    background-color: #00000046;
+    color: white;
+    border-radius: 10px;
+    padding: 30px 40px;
+}
+.wrapper h2 {
+    font-size: 30px;
+    text-align: center;
+}
+.wrapper .inputbox {
+    position: relative;
+    width: 70%;
+    height: 30px;
+    margin: 30px 45px;
+}
+.inputbox input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgb(118, 109, 109); border-radius: 3px;
+    border-radius: 30px;
+    font-size: 14px;
+    color: white;
+    padding: 20px 45px 20px 20px;
+}
+.inputbox input::placeholder {
+color: white;
+}
+.inputbox i {
+    position: absolute;
+    right: 5px;
+    top: 39%;
+    transform: translate(-50%);
+    font-size: 20px;
+}
+.wrapper .remember {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin: 0 0 15px;
+}
+.remember label input {
+    accent-color: white;
+    margin-right: 3px;
+}
+.remember a {
+    color: white;
+    text-decoration: none;
+}
+.remember a:hover {
+    text-decoration: underline;
+}
+.wrapper .btn {
+    width: 100%;
+    height: 45px;
+    background: white;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.151);
+    cursor: pointer;
+    font-size: 10px;
+    color: rgb(34, 16, 236);
+    font-weight: 600;
+}
+.wrapper .register-link {
+    font-size: 14px;
+    text-align: center;
+    margin-top: 20px;
+}
+.register-link p a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+.register-link a:hover {
+    text-decoration: underline;
+}
+.scan {
+    padding: 0 100px;
+    box-sizing: border-box;
+    text-align: center;
+}
+/* footer */ 
+footer {
+    background-color: #0000004c;
+    color: #F1F1E4;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3%;
+    width: 100%;
+}
+
+footer ul {
+    list-style: none;
+}
+footer li {
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 900px) {
+    .navbar {padding: 0;
+
+    }
+    .navbar .logo {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-top: 20px;
+        margin-left: 20px;
+    }
+.navbar a {
+    text-align: center;
+}
+.links ul {display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+    .navbar .burger{display: block;}
+    .links {
+        display: flex;
+        position: absolute;
+        flex-direction: column;
+        width: 100vw;
+        height: 100vh;
+        backdrop-filter: blur(5px);
+        align-items: center;
+        justify-content: center;
+        margin-left: -100%;
+        transition: all 1s ease;
+    }
+    .links.menu-mobile {
+        margin-left: 0;
+    }
+    .navbar .links ul li  {
+        margin: 25px 0;
+        font-size: 1.1rem;
+    }
+    .navbar .logo {
+        position: absolute;
+        top: 10px;
+        left: 30px;
+    }
+}

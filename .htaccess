@@ -1,0 +1,9 @@
+RewriteEngine On
+
+RewriteRule ^accueil$ menu.php
+RewriteRule ^users$ main.php
+
+RewriteRule ^inscription$ controllers/registerController.php
+RewriteRule ^connexion$ controllers/loginController.php
+RewriteRule ^deconnexion$ controllers/logoutController.php
+RewriteRule ^commentaires$ controllers/commentsController.php
