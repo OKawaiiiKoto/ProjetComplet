@@ -11,7 +11,7 @@ CREATE TABLE A5cy8_Books(
         id      Int  Auto_increment  NOT NULL ,
         name    Varchar (50) NOT NULL ,
         year    Varchar (4) NOT NULL ,
-        date    Date NOT NULL ,
+        image   Varchar (1) NOT NULL ,
         Summary Text NOT NULL
 	,CONSTRAINT Books_PK PRIMARY KEY (id)
 )ENGINE=InnoDB;
@@ -65,9 +65,8 @@ CREATE TABLE A5cy8_scans(
         chapter        Int NOT NULL ,
         id_books Int NOT NULL ,
         id_users Int NOT NULL
-        images Varchar (250) NOT NULL
-	,CONSTRAINT scans_PK PRIMARY KEY (id)
-
+	
+        ,CONSTRAINT scans_PK PRIMARY KEY (id)
 	,CONSTRAINT scans_books_FK FOREIGN KEY (id_Bbooks) REFERENCES A5cy8_Books(id)
 	,CONSTRAINT scans_users0_FK FOREIGN KEY (id_users) REFERENCES A5cy8_Users(id)
 )ENGINE=InnoDB;
@@ -116,3 +115,15 @@ CREATE TABLE A5cy8_Likes(
 	,CONSTRAINT likes_scans_FK FOREIGN KEY (id_posts) REFERENCES A5cy8_scans(id)
 	,CONSTRAINT likes_users0_FK FOREIGN KEY (id_users) REFERENCES A5cy8_users(id)
 )ENGINE=InnoDB;
+
+/*#------------------------------------------------------------
+# Table: A5cy8_images
+#------------------------------------------------------------
+
+CREATE TABLE A5cy8_images(
+        images   Varchar(200) NOT NULL ,
+        id_scans Int NOT NULL
+	,CONSTRAINT images_PK PRIMARY KEY (id_scans)
+
+	,CONSTRAINT images_scans_FK FOREIGN KEY (id_scans) REFERENCES A5cy8_scans(id)
+)ENGINE=InnoDB;*/

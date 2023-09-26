@@ -7,6 +7,8 @@ define('ERROR_GENERAL', 'Le site est temporairement indisponible. Veuillez rées
 define('SUCCESS_USERS_ADD', 'L\'utilisateur a été ajouté avec succès');
 define('ERROR_USERS_GENERAL', 'L\'utilisateur n\'a pas pu être créé. Veuillez réessayer plus tard.');
 define('ERROR_USERS_LOGIN', 'L\'adresse mail ou le mot de passe est incorrect.');
+define('SUCCESS_USERS_UPDATE', 'Vos informations ont été mises à jour avec succès.');
+define('SUCCESS_USERS_UPDATE_PASSWORD', 'Votre mot de passe a été mis à jour avec succès.');
 
 //username
 define('ERROR_USERS_USERNAME_EMPTY', 'Le nom d\'utilisateur est obligatoire.');
@@ -23,7 +25,7 @@ define('ERROR_USERS_PASSWORD_EMPTY', 'Le mot de passe est obligatoire.');
 define('ERROR_USERS_PASSWORD_INVALID', 'Le mot de passe doit contenir au minimum 8 caractères, 1 majuscule, 1 minuscule, un chiffre et un caractère spécial.');
 define('ERROR_USERS_PASSWORD_DIFFERENT', 'Les mots de passe ne correspondent pas.');
 define('ERROR_USERS_PASSWORD_CONFIRMATION_EMPTY', 'La confirmation du mot de passe est obligatoire.');
-
+define('ERROR_USERS_PASSWORD_WRONG', 'Le mot de passe est incorrect.');
 // Date de naissance
 define('ERROR_USERS_BIRTHDATE_EMPTY', 'La date de naissance est obligatoire.');
 define('ERROR_USERS_BIRTHDATE_INVALID', 'La date de naissance doit être au format JJ/MM/YYYY.');

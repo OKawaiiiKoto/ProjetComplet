@@ -15,6 +15,7 @@
         echo $_SESSION['user']['username']; 
         ?>
         <a href="deconnexion">déconnexion</a>
+        <a href="changements">Modification infos</a>
         </div>
         <img src="assets/img/burger.png" alt="Menu" class="burger">
     </nav>

@@ -24,6 +24,7 @@ if (count($_POST) > 0) {
     }
 
     $comment->id_users = $_SESSION['user']['id'];
+    $comment->id_scans = 2;
     
     if(count($formErrors) == 0) {
         if($comment->add()) {

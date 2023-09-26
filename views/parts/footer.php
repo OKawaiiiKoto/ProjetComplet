@@ -1,15 +1,12 @@
 <footer>
-    <ul >
-        <li class="siteTitle">La Manu Post</li>
-        <li>Blog communautaire</li>
+    <ul>
+        <li class="siteTitle">Scan</li>
     </ul>
     <ul>
-        <li>Plan du site</li>
+        <li>Aide</li>
+        <li>Accueil</li>
+        <li>Contact
     </ul>
-        <ul>
-            <li>Accueil</li>
-            <li>Articles</li>
-        </ul>
 </footer>
 <script src="assets/js/script.js"></script>
 </body>

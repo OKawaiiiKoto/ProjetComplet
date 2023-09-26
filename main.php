@@ -4,8 +4,5 @@
     <div class="title">
         <h2>News</h2>
     </div>
-    <div class=">
-
-    </div>
 </div>
 <?php include "views/parts/footer.php" ;?>
