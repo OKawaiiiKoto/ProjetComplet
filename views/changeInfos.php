@@ -1,4 +1,4 @@
-<main>
+<main class="wrapper">
     <h1>Mettre à jour le profil</h1>
     <h2>Mes infos</h2>
     <?php if (isset($success['infos'])) { ?>
@@ -7,18 +7,18 @@
 
     <form action="" method="post">
         <label for="username">Nom d'utilisateur</label>
-        <input type="text" name="username" id="username">
+        <input type="text" name="username" id="username" class="inputbox">
         <?php if (isset($formErrors['username'])) { ?>
-            <p><?= $formErrors['username'] ?></p>
+            <p class="errorMessage"><?= $formErrors['username'] ?></p>
         <?php } ?>
 
         <label for="email">Adresse mail</label>
-        <input type="email" name="email" id="email" >
+        <input type="email" name="email" id="email" class="inputbox">
         <?php if (isset($formErrors['email'])) { ?>
-            <p><?= $formErrors['email'] ?></p>
+            <p class="errorMessage"><?= $formErrors['email'] ?></p>
         <?php } ?>
 
-        <input type="submit" value="Modifier" name="updateInfos">
+        <input type="submit" value="Modifier" name="updateInfos" class="btn">
     </form>
 
     <h2>Mon mot de passe</h2>
@@ -27,24 +27,23 @@
     <?php } ?>
     <form action="" method="post">
         <label for="currentPassword">Mot de passe actuel</label>
-        <input type="password" name="currentPassword" id="currentPassword">
+        <input type="password" name="currentPassword" id="currentPassword" class="inputbox">
         <?php if (isset($formErrors['currentPassword'])) { ?>
-            <p><?= $formErrors['currentPassword'] ?></p>
+            <p class="errorMessage"><?= $formErrors['currentPassword'] ?></p>
         <?php } ?>
 
         <label for="password">Nouveau mot de passe</label>
-        <input type="password" name="password" id="password">
+        <input type="password" name="password" id="password" class="inputbox">
         <?php if (isset($formErrors['password'])) { ?>
-            <p><?= $formErrors['password'] ?></p>
+            <p class="errorMessage"><?= $formErrors['password'] ?></p>
         <?php } ?>
 
         <label for="passwordConfirm">Confirmez le nouveau mot de passe</label>
-        <input type="password" name="passwordConfirm" id="passwordConfirm">
+        <input type="password" name="passwordConfirm" id="passwordConfirm" class="inputbox">
         <?php if (isset($formErrors['passwordConfirm'])) { ?>
-            <p><?= $formErrors['passwordConfirm'] ?></p>
+            <p class="errorMessage"><?= $formErrors['passwordConfirm'] ?></p>
         <?php } ?>
 
-        <input type="submit" value="Modifier" name="updatePassword">
+        <input type="submit" value="Modifier" name="updatePassword" class="btn">
     </form>
-
 </main>

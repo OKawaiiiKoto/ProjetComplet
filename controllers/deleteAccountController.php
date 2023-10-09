@@ -15,5 +15,5 @@ require_once '../models/usersModel.php';
 
 
     require_once '../views/parts/header.php';
-    require_once '../views/deleteAccounts';
+    require_once '../views/deleteAccount';
     require_once '../views/parts/footer.php';

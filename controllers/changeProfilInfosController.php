@@ -103,6 +103,5 @@ if(count($formErrors) == 0) {
 
 $userInfos = $user->getOneById();
 
-require_once '../views/parts/header.php';
+require_once '../views/parts/header2.php';
 require_once '../views/changeInfos.php';
-require_once '../views/parts/footer.php';

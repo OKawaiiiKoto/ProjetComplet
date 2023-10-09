@@ -61,12 +61,48 @@
 .navbutton{
     margin-right: 10px;
 }
-.profileimg {
-    width: 40px;
-    border-radius: 50%;
-    border: 2px solid white;
-    top: 10px;
+
+/* Pages Des Mangas */ 
+
+#detail-container {
+    max-width: 800px;
+    margin: 15px auto;
+    padding: 20px;
+    background-color: #00000026;
+    box-shadow: 0 2px 4px rgb(0, 0, 0);
+    display: flex; 
+    border-radius: 10px;
 }
+
+.image-container {
+    flex: 0 0 40%; /* 40% de la largeur du conteneur pour l'image */
+    padding: 20px;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px; 
+}
+
+.info-container {
+    flex: 0 0 60%; /* 60% de la largeur du conteneur pour les informations */
+    padding: 20px;
+    border-left: 2px solid #000000; 
+}
+
+h3 {
+    font-size: 24px;
+    color: #080808;
+    margin-top: 0;
+}
+
+p {
+    font-size: 16px;
+    color: #000000;
+    margin-top: 10px;
+}
+
 /*Formulaire */
 .wrapper {
     width: 400px;
@@ -157,19 +193,136 @@ color: white;
 }
 /* footer */ 
 footer {
+    text-align: center;
+    padding: 10px;
     background-color: #0000004c;
     color: #F1F1E4;
     display: flex;
     justify-content: space-between;
-    margin-top: 3%;
+    align-items: center; /* Centrage vertical du contenu */
     width: 100%;
+    position: fixed;
+    bottom: 0;
 }
 
-footer ul {
-    list-style: none;
+footer .left {
+    flex: 1;
+    display: flex;
+    align-items: center;
 }
-footer li {
+
+footer .left a {
+    text-decoration: none;
+    color: #F1F1E4;
+    display: flex; /* Permet au texte et au logo de rester côte à côte */
+    align-items: center; /* Centrage vertical du contenu */
+}
+
+footer .left a img {
+    max-width: 30px; /* Taille maximale du logo */
+    height: auto;
+    border-radius: 50%; /* Coins arrondis pour le logo */
+    margin-right: 5px; /* Espace entre le texte et le logo */
+}
+
+footer .center {
+    flex: 1;
+}
+
+footer .center a {
+    color: #F1F1E4;
+    text-decoration: none;
+}
+
+/*modal*/
+
+.modal-container {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    /* Elle est au-dessus de tous les autres éléments de la page */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal {
+    background-color: #fefeff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.modal-footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 1rem;
+}
+
+.close-btn {
+    float: right;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+/* Page Accessible aux Modos*/
+
+container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.book-container {
+    display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
+}
+
+.book {
+    width: calc(16.66% - 10px); /* Pour afficher 6 livres par ligne */
+    margin: 0 0 20px;
+    border: 1px solid #000;
+    padding: 10px;
+    text-align: center;
+    position: relative;
+}
+
+.book img {
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.3s; 
+    border-radius: 15px;
+}
+
+.book-title {
+    margin-top: 5px;
+    font-size: larger;
+}
+
+.book:hover img {
+    transform: scale(1.1); /* Zoom au survol */
+    cursor: pointer;
+}
+
+.book-actions {
+    text-align: center;
+    margin-top: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
 }
 
 @media screen and (max-width: 900px) {

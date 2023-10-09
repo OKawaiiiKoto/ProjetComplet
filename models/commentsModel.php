@@ -1,4 +1,5 @@
 <?php
+require_once ' ../models/db.php';
 class comments {
     public int $id = 0;
     public string $date = '';
@@ -8,11 +9,7 @@ class comments {
     private $db;
 
     public function __construct() {
-        try{
-            $this->db = new PDO('mysql:host=localhost;dbname=projet;charset=utf8', 'a5cy8_admin', 'Pk9GkCX8sa84');
-        } catch(PDOException $e) {
-            //Renvoyer vers une page d'erreur
-        }
+        $this->db = db::connect();
     }
 
     /**

@@ -12,3 +12,5 @@ RewriteRule ^ajouter-livre$ controllers/booksController.php
 RewriteRule ^modifier-livre-([0-9]+)$ controllers/updateBooksController.php?id=$1
 RewriteRule ^liste-livres$ controllers/getBooksListController.php
 RewriteRule ^page-livre-([0-9]+)$ controllers/getBooksController.php?id=$1
+RewriteRule ^ajout-scans$ controllers/transactionController.php
+RewriteRule ^supprimer-mon-compte$ controllers/deleteAccountController.php
