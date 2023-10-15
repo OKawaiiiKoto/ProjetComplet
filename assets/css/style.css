@@ -41,9 +41,9 @@
     margin:  5px 25px;
     right: 0;
 }
-.navbar .links ul li.active a {
-    color: rgb(255, 0, 0);
-    font-size: 600;
+
+.navbar .links ul #acc {
+    display: flex;
 }
 .navbar .burger {
     display: none;
@@ -58,6 +58,9 @@
     padding-right: 15px;
     padding-top: 22px;
 }
+.register a {
+    margin-left: 10px; /* Ajouter de l'espace à gauche des liens */
+}
 .navbutton{
     margin-right: 10px;
 }
@@ -65,8 +68,8 @@
 /* Pages Des Mangas */ 
 
 #detail-container {
-    max-width: 800px;
-    margin: 15px auto;
+    max-width: 1200px;
+    margin: 20px auto;
     padding: 20px;
     background-color: #00000026;
     box-shadow: 0 2px 4px rgb(0, 0, 0);
@@ -76,7 +79,7 @@
 
 .image-container {
     flex: 0 0 40%; /* 40% de la largeur du conteneur pour l'image */
-    padding: 20px;
+    padding: 10px;
 }
 
 .image-container img {
@@ -86,24 +89,27 @@
 }
 
 .info-container {
-    flex: 0 0 60%; /* 60% de la largeur du conteneur pour les informations */
-    padding: 20px;
+    flex: 0 0 60%; /* 60% de la largeur du conteneur */
+    padding: 30px;
     border-left: 2px solid #000000; 
 }
 
 h3 {
-    font-size: 24px;
+    text-align: center;
+    font-size: 45px;
     color: #080808;
     margin-top: 0;
 }
 
 p {
-    font-size: 16px;
+    text-align: center;
+    font-size: 20px;
     color: #000000;
-    margin-top: 10px;
+    margin-top: 25px;
 }
 
 /*Formulaire */
+
 .wrapper {
     width: 400px;
     background-color: #00000046;
@@ -276,23 +282,21 @@ footer .center a {
     text-decoration: none;
     cursor: pointer;
 }
+
 /* Page Accessible aux Modos*/
 
-container {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
 .book-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    margin: 10px 10px 0 15px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
 }
 
 .book {
-    width: calc(16.66% - 10px); /* Pour afficher 6 livres par ligne */
-    margin: 0 0 20px;
-    border: 1px solid #000;
+    border: 2px solid #000;
+    border-radius: 15px;
     padding: 10px;
     text-align: center;
     position: relative;
@@ -300,13 +304,13 @@ container {
 
 .book img {
     max-width: 100%;
-    height: auto;
-    transition: transform 0.3s; 
-    border-radius: 15px;
+    height: 400px;
+    transition: transform 0.2s; 
+    border-radius: 20px;
 }
 
 .book-title {
-    margin-top: 5px;
+    margin-top: 15px;
     font-size: larger;
 }
 
@@ -325,9 +329,106 @@ a {
     color: #000000;
 }
 
-@media screen and (max-width: 900px) {
-    .navbar {padding: 0;
+@media screen and (min-width: 1150px) and (max-width: 1600px) {
+  
+    /* Page Accessible aux Modos*/
+    container {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+.book-container {
+    margin: 10px 10px 0 15px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+}
 
+.book {
+    border: 2px solid #000;
+    border-radius: 15px;
+    padding: 10px;
+    text-align: center;
+    position: relative;
+}
+
+.book img {
+    max-width: auto;
+    height: 400px;
+    transition: transform 0.2s; 
+    border-radius: 20px;
+}
+
+.book-title {
+    margin-top: 15px;
+    font-size: larger;
+}
+
+.book-actions {
+    text-align: center;
+    margin-top: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+}
+ }
+
+@media screen and (min-width: 901px) and (max-width: 1149px) {
+  
+    /* Page Accessible aux Modos*/
+.book-container {
+    margin: 10px 10px 0 15px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+}
+
+.book {
+    border: 2px solid #000;
+    border-radius: 15px;
+    padding: 10px;
+    text-align: center;
+    position: relative;
+}
+
+.book img {
+    max-width: auto;
+    height: 300px;
+    transition: transform 0.2s; 
+    border-radius: 20px;
+}
+
+.book-title {
+    margin-top: 15px;
+    font-size: larger;
+}
+
+.book-actions {
+    text-align: center;
+    margin-top: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+}
+ }
+ @media screen and (min-width: 970px) and (max-width: 1148px) {
+.book img {
+    max-width: auto;
+    height: 350px;
+    transition: transform 0.2s; 
+    border-radius: 20px;
+}
+ }
+@media screen and (min-width: 750px) and (max-width: 900px) {
+    .navbar {
+        padding: 0;
     }
     .navbar .logo {
         font-size: 2rem;
@@ -342,7 +443,237 @@ a {
     flex-direction: column;
     align-items: center;
     }
-    .navbar .burger{display: block;}
+    .navbar .burger{
+            display: block;       
+            position: absolute;
+            right: 10px;
+            width: 36px;
+            color: white;
+            top: 15px;
+    }
+    .links {
+        display: flex;
+        position: absolute;
+        flex-direction: column;
+        width: 100vw;
+        height: 100vh;
+        backdrop-filter: blur(5px);
+        align-items: center;
+        justify-content: center;
+        margin-left: -100%;
+        transition: all 1s ease;
+    }
+    .links.menu-mobile {
+        margin-left: 0;
+    }
+    .navbar .links ul li  {
+        margin: 25px 0;
+        font-size: 1.1rem;
+    }
+    .navbar .logo {
+       display: none;
+    }
+.register {
+    display: none;
+}
+
+    /* Page Accessible aux Modos*/
+
+
+container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.book-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+}
+
+.book {
+    border: 2px solid #000;
+    border-radius: 15px;
+    padding: 10px;
+    text-align: center;
+    position: relative;
+}
+
+.book img {
+    max-width: auto;
+    height: 300px;
+    transition: transform 0.2s; 
+    border-radius: 20px;
+}
+
+.book-title {
+    margin-top: 15px;
+    font-size: larger;
+}
+
+.book-actions {
+    text-align: center;
+    margin-top: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+}
+
+/* Pages Des Mangas */ 
+
+#detail-container {
+    max-width: 550px;
+    margin: 15px auto;
+    padding: 20px;
+    background-color: #00000026;
+    box-shadow: 0 2px 4px rgb(0, 0, 0);
+    display: flex; 
+    border-radius: 10px;
+}
+
+.image-container {
+    flex: 0 0 40%; /* 40% de la largeur du conteneur pour l'image */
+    padding: 20px;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px; 
+}
+
+.info-container {
+    flex: 0 0 60%; /* 60% de la largeur du conteneur */
+    padding: 20px;
+    border-left: 2px solid #000000; 
+}
+
+h3 {
+    font-size: 30px;
+    color: #080808;
+    margin-top: 0;
+}
+
+p {
+    font-size: 20px;
+    color: #000000;
+    margin-top: 10px;
+}
+ }
+ @media screen and (min-width: 801px) and (max-width: 900px) {
+    /* Pages Des Mangas */ 
+
+#detail-container {
+    max-width: 700px;
+    margin: 15px auto;
+    padding: 20px;
+    background-color: #00000026;
+    box-shadow: 0 2px 4px rgb(0, 0, 0);
+    display: flex; 
+    border-radius: 10px;
+}
+
+.image-container {
+    flex: 0 0 40%; /* 40% de la largeur du conteneur pour l'image */
+    padding: 20px;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px; 
+}
+
+.info-container {
+    flex: 0 0 60%; /* 60% de la largeur du conteneur */
+    padding: 20px;
+    border-left: 2px solid #000000; 
+}
+
+h3 {
+    font-size: 30px;
+    color: #080808;
+    margin-top: 0;
+}
+
+p {
+    font-size: 20px;
+    color: #000000;
+    margin-top: 10px;
+}
+ }
+ @media screen and (min-width: 700px) and (max-width: 800px) {
+    /* Pages Des Mangas */ 
+
+#detail-container {
+    max-width: 650px;
+    margin: 15px auto;
+    padding: 20px;
+    background-color: #00000026;
+    box-shadow: 0 2px 4px rgb(0, 0, 0);
+    display: flex; 
+    border-radius: 10px;
+}
+
+.image-container {
+    flex: 0 0 40%; /* 40% de la largeur du conteneur pour l'image */
+    padding: 20px;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px; 
+}
+
+.info-container {
+    flex: 0 0 60%; /* 60% de la largeur du conteneur */
+    padding: 20px;
+    border-left: 2px solid #000000; 
+}
+
+h3 {
+    font-size: 30px;
+    color: #080808;
+    margin-top: 0;
+}
+
+p {
+    font-size: 20px;
+    color: #000000;
+    margin-top: 10px;
+}
+ }
+ 
+@media screen and (min-width: 651px) and (max-width: 749px) {
+    .navbar {
+        padding: 0;
+    }
+    .navbar .logo {
+        display: none;
+    }
+    .register {
+        display: none;
+    }
+.navbar a {
+    text-align: center;
+}
+.links ul {display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+    .navbar .burger{
+        display: block;
+        position: absolute;
+        right: 25px;
+        width: 36px;
+        color: white;
+        top: 15px;
+    }
     .links {
         display: flex;
         position: absolute;
@@ -367,4 +698,215 @@ a {
         top: 10px;
         left: 30px;
     }
+
+
+    /* Page Accessible aux Modos*/
+
+.book-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
 }
+
+.book {
+    border: 2px solid #000;
+    border-radius: 15px;
+    padding: 10px;
+    text-align: center;
+    position: relative;
+}
+
+.book img {
+    max-width: auto;
+    height: 300px;
+    transition: transform 0.2s; 
+    border-radius: 20px;
+}
+
+.book-title {
+    margin-top: 15px;
+    font-size: larger;
+}
+
+.book-actions {
+    text-align: center;
+    margin-top: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+}
+/* Pages Des Mangas */ 
+
+#detail-container {
+    max-width: 500px;
+    margin: 15px auto;
+    padding: 20px;
+    background-color: #00000026;
+    box-shadow: 0 2px 4px rgb(0, 0, 0);
+    display: flex; 
+    border-radius: 10px;
+}
+
+.image-container {
+    flex: 0 0 40%; /* 40% de la largeur du conteneur pour l'image */
+    padding: 20px;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px; 
+}
+
+.info-container {
+    flex: 0 0 60%; /* 60% de la largeur du conteneur */
+    padding: 20px;
+    border-left: 2px solid #000000; 
+}
+
+h3 {
+    font-size: 25px;
+    color: #080808;
+    margin-top: 0;
+}
+
+p {
+    font-size: 15px;
+    color: #000000;
+    margin-top: 10px;
+}
+ } 
+ @media screen and (min-width: 300px) and (max-width: 650px) {
+    .navbar {
+        padding: 0;
+    }
+    .navbar .logo {
+        display: none;
+    }
+.navbar a {
+    text-align: center;
+}
+.links ul {display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+    .navbar .burger{
+            display: block;       
+            position: absolute;
+            right: 25px;
+            width: 36px;
+            color: white;
+            top: 15px;
+    }
+    .links {
+        display: flex;
+        position: absolute;
+        flex-direction: column;
+        width: 100vw;
+        height: 100vh;
+        backdrop-filter: blur(5px);
+        align-items: center;
+        justify-content: center;
+        margin-left: -100%;
+        transition: all 1s ease;
+    }
+    .links.menu-mobile {
+        margin-left: 0;
+    }
+    .navbar .links ul li  {
+        margin: 25px 0;
+        font-size: 1.1rem;
+    }
+    .navbar .logo {
+       display: none;
+    }
+.register {
+    display: none;
+}
+
+    /* Page Accessible aux Modos*/
+
+.book-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+}
+
+.book {
+    border: 2px solid #000;
+    border-radius: 15px;
+    padding: 10px;
+    text-align: center;
+    position: relative;
+}
+
+.book img {
+    max-width: auto;
+    height: 300px;
+    transition: transform 0.2s; 
+    border-radius: 20px;
+}
+
+.book-title {
+    margin-top: 15px;
+    font-size: larger;
+}
+
+.book-actions {
+    text-align: center;
+    margin-top: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+}
+
+/* Pages Des Mangas */ 
+
+#detail-container {
+    max-width: 475px;
+    margin: 15px auto;
+    padding: 20px;
+    background-color: #00000026;
+    box-shadow: 0 2px 4px rgb(0, 0, 0);
+    display: flex; 
+    border-radius: 10px;
+}
+
+.image-container {
+    flex: 0 0 40%; /* 40% de la largeur du conteneur pour l'image */
+    padding: 20px;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px; 
+}
+
+.info-container {
+    flex: 0 0 60%; /* 60% de la largeur du conteneur */
+    padding: 20px;
+    border-left: 2px solid #000000; 
+}
+
+h3 {
+    font-size: 30px;
+    color: #080808;
+    margin-top: 0;
+}
+
+p {
+    font-size: 20px;
+    color: #000000;
+    margin-top: 10px;
+}
+ }
+  

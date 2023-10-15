@@ -1,8 +1,10 @@
 <nav class="navbar">
-    <a href="/accueil" class="logo">Scan</a>
+    <a href="/connect" class="logo">Scan</a>
     <div class="links">
            <ul>
-                <li><a href="Romance.php" class="active">Shojo</a></li>
+                <li id="acc"><a href="/connect" class="active">Accueil</a></li>
+                <li><a href="Romance.php" >Shojo</a></li>
+                <li><a href="Romance.php" >Shojo</a></li>
                 <li><a href="Fantasy.php">Fantasy</a></li>
                 <li><a href=".php"> Shonen</a></li>
                 <li><a href="mha.php"> & </a></li>
@@ -11,7 +13,6 @@
         </div>
         <div class="register">
         <?php 
-        session_start();
         echo $_SESSION['user']['username']; 
         ?>
         <a href="deconnexion">déconnexion</a>

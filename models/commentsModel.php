@@ -1,5 +1,7 @@
 <?php
-require_once ' ../models/db.php';
+
+require_once '../models/db.php';
+
 class comments {
     public int $id = 0;
     public string $date = '';

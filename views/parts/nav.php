@@ -1,8 +1,9 @@
 <nav class="navbar">
-    <a href="Menu.php" class="logo">Scan</a>
+    <a href="/accueil" class="logo">Scan</a>
     <div class="links">
            <ul>
-                <li><a href="Romance.php" class="active">Shojo</a></li>
+                <li id="acc"><a href="/accueil" class="active">Accueil</a></li>
+                <li><a href="Romance.php" >Shojo</a></li>
                 <li><a href="Fantasy.php">Fantasy</a></li>
                 <li><a href=".php"> Shonen</a></li>
                 <li><a href="mha.php"> & </a></li>

@@ -1,8 +1,8 @@
 RewriteEngine On
 
 RewriteRule ^accueil$ menu.php
-RewriteRule ^users$ main.php
 
+RewriteRule ^connect$ controllers/mainController.php
 RewriteRule ^inscription$ controllers/registerController.php
 RewriteRule ^connexion$ controllers/loginController.php
 RewriteRule ^deconnexion$ controllers/logoutController.php
@@ -12,5 +12,5 @@ RewriteRule ^ajouter-livre$ controllers/booksController.php
 RewriteRule ^modifier-livre-([0-9]+)$ controllers/updateBooksController.php?id=$1
 RewriteRule ^liste-livres$ controllers/getBooksListController.php
 RewriteRule ^page-livre-([0-9]+)$ controllers/getBooksController.php?id=$1
-RewriteRule ^ajout-scans$ controllers/transactionController.php
+RewriteRule ^ajout-scans-([0-9]+)$ controllers/transactionController.php?id=$1
 RewriteRule ^supprimer-mon-compte$ controllers/deleteAccountController.php

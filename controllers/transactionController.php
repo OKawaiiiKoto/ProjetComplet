@@ -6,6 +6,8 @@ require_once '../models/scansModel.php';
 require_once '../models/imagesModel.php';
 require_once '../errors.php';
 
+var_dump($_GET);
+
 $formErrors = [];
 
 
@@ -16,11 +18,13 @@ if (count($formErrors) == 0) {
     try {
         $t = new transaction;
         $t->beginTransaction();
+        $scan->chapter = 1;
+        $scan->id_books = $_GET['id'];
+        $scan->id_users = $_SESSION['user']['id'];
         $scan->add();
-        $scan->chapter = 125;
-        $t->lastInsertId();
+        $images->id_scans = $t->lastInsertId();
+        $images->images = 'test';
         $images->add();
-        //$images->id_scans;
         $t->commit();
         }
         catch (PDOException $e){

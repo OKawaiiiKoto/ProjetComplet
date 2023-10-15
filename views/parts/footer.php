@@ -1,6 +1,6 @@
 <footer>
         <div class="left">
-            <a href="#">
+            <a href="/connect">
                 <img src="../../assets/img/jjk 1.jpg" alt="Logo">
                 Scan
             </a>
