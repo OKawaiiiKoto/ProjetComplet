@@ -24,4 +24,13 @@ class scans
         $request->bindValue(':id_users', $this->id_users, PDO::PARAM_INT);
         return $request->execute();
     }
+    public function getScanByIdBooks() {
+        $query = 'SELECT `id` , `chapter` , `id_users`
+        FROM `a5cy8_scans` 
+        WHERE `id_books` = :id_books;';
+        $request = $this->db->prepare($query);
+        $request->bindValue(':id_books',$this->id_books, PDO::PARAM_INT);
+        $request->execute();
+        return $request->fetchAll(PDO::FETCH_OBJ);
+    }
 }

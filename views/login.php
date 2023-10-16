@@ -4,11 +4,17 @@
         <div class="inputbox">
         <input type="text" name="username" id="username" placeholder="Username" maxlength="15" required>
         <i class='bx bx-user'></i>
+        <?php if (isset($formErrors['username'])) { ?>
+            <p><?= $formErrors['username'] ?></p>
+        <?php } ?>
         </div>
         
         <div class="inputbox">
         <input type="password" name="password" id="password" placeholder="Password" maxlength="25" required>
         <i class='bx bx-lock-alt'></i>
+        <?php if (isset($formErrors['password'])) { ?>
+            <p><?= $formErrors['password'] ?></p>
+        <?php } ?>
         </div>
         
         <div class="remember">

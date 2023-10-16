@@ -32,7 +32,7 @@ class comments {
     }
 
     public function getCommentsById() {
-        $query = 'SELECT DATE_FORMAT(`date`, "%d/%m/%Y à %Hh%i") AS `date`, `content` , `id_users` , `id_scans`
+        $query = 'SELECT `id` , DATE_FORMAT(`date`, "%d/%m/%Y à %Hh%i") AS `date`, `content` , `id_users` , `id_scans`
         FROM `a5cy8_comments` 
         WHERE `id_users` = :id_users
         ORDER BY `date` DESC
@@ -43,8 +43,8 @@ class comments {
         return $request->fetchAll(PDO::FETCH_OBJ);
     }
 
-    public function getListByScans() {
-        $query = 'SELECT DATE_FORMAT(`date`, "%d/%m/%Y à %Hh%i") AS `date`,`content`, `username` 
+    public function getCommentsListByScans() {
+        $query = 'SELECT  DATE_FORMAT(`date`, "%d/%m/%Y à %Hh%i") AS `date`,`content`, `username` 
         FROM `a5cy8_comments` 
         INNER JOIN `a5cy8_users` ON `a5cy8_users`.`id` = `id_users` 
         WHERE `id_scans` = :id_scans;';

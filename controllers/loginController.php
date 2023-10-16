@@ -21,7 +21,7 @@ if (count($_POST) > 0) {
             $user->password = $user->getHash();
             if (password_verify($_POST['password'], $user->password)) {
                 $_SESSION['user'] = $user->getInfos();
-                 header('Location:users');
+                 header('Location:/connect');
                  exit;
             } else {
                 $formErrors['username'] = $formErrors['password'] = 'L\'username ou le mot de passe est incorrect. 2';

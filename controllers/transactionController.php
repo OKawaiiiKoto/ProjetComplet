@@ -34,6 +34,4 @@ if (count($formErrors) == 0) {
 }
 var_dump($_POST);
 require_once '../views/parts/header2.php';
-//require_once '../views/addScans.php';
 require_once '../views/addImages.php';
-//require_once '../views/parts/footer.php';

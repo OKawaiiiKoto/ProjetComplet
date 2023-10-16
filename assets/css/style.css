@@ -326,6 +326,7 @@ footer .center a {
 
 a {
     text-decoration: none;
+    margin-right: 4px;
     color: #000000;
 }
 
