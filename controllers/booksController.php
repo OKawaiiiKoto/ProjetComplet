@@ -23,19 +23,19 @@ if (count($_POST) > 0) {
                 $formErrors['name'] = 'le nom est deja utilise.';
             }*/
     } else {
-        $formErrors['name'] = ERROR_POSTS_TITLE_EMPTY;
+        $formErrors['name'] = ERROR_NAME_TITLE_EMPTY;
     }
 
     if (!empty($_POST['year'])) {
         $book->year = strip_tags($_POST['year']);
     } else {
-        $formErrors['year'] = ERROR_USERS_EMAIL_INVALID;
+        $formErrors['year'] = ERROR_YEAR_CONTENT_EMPTY;
     }
    
    if (!empty($_POST['summary'])) { 
         $book->summary = strip_tags($_POST['summary']);
     } else {
-        $formErrors['summary'] = ERROR_USERS_USERNAME_INVALID; 
+        $formErrors['summary'] = ERROR_POSTS_CONTENT_EMPTY; 
     }
    
       

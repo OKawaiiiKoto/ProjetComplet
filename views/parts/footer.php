@@ -2,7 +2,7 @@
         <div class="left">
             <a href="/connect">
                 <img src="../../assets/img/jjk 1.jpg" alt="Logo">
-                Scan
+                ReadScan
             </a>
         </div>
         <div class="center"></div>

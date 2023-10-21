@@ -100,8 +100,19 @@ if(count($formErrors) == 0) {
     }
   }
 }
+  /*if (isset($_POST['delete'])) {
+    if($user->deleteAccount()){
+        
+        unset($_SESSION['user']);
+        session_destroy();
+        header('Location: /accueil');
+        exit;
+    }
+  }*/
+
 
 $userInfos = $user->getOneById();
 
 require_once '../views/parts/header2.php';
 require_once '../views/changeInfos.php';
+require_once '../views/parts/footer2.php';

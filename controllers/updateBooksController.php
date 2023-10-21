@@ -17,13 +17,13 @@ if (isset($_POST['update'])) {
     if (!empty($_POST['name'])) {
         $book->name = strip_tags($_POST['name']);
     } else {
-        $formErrors['name'] = ERROR_POSTS_TITLE_EMPTY;
+        $formErrors['name'] = ERROR_NAME_TITLE_EMPTY;
     }
 
     if (!empty($_POST['year'])) {
         $book->year= strip_tags($_POST['year']);
     } else {
-        $formErrors['year'] = ERROR_POSTS_CONTENT_EMPTY;
+        $formErrors['year'] = ERROR_YEAR_CONTENT_EMPTY;
     }
 
     if (!empty($_POST['summary'])) {
@@ -83,6 +83,13 @@ if(isset($_POST['updateImage'])){
     }
 }
 
+if (isset($_POST['deleteBooks'])) {
+    if($book->deleteBooks()){
+        
+        header('Location: /liste-livres');
+        exit;
+    }
+  }
 if (!empty($_GET['id'])) {
     if ($book->checkIfExists() == 0) {
         header('Location: /liste-livres');
@@ -91,7 +98,8 @@ if (!empty($_GET['id'])) {
 }
 $bookInfos = $book->getOneById();
 
-// var_dump($bookInfos);
+//var_dump($bookInfos);
+
 require_once '../views/parts/header.php';
 require_once '../views/updateBooks.php';
-require_once '../views/parts/footer.php';
+require_once '../views/parts/footer2.php';

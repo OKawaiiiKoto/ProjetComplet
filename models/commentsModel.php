@@ -21,6 +21,9 @@ class comments {
      * @param int id_users Id de l'auteur du commentaire
      * @return bool Renvoie true si la requête est executée sinon renvoie false
      */
+
+     // Fonction qui permet d'envoyer des informations dans la base de données //
+
     public function add(){
         $query = 'INSERT INTO `a5cy8_comments` (`date`, `content` , `id_users` , `id_scans`) 
         VALUES (NOW(), :content, :id_users, :id_scans);';
@@ -30,6 +33,8 @@ class comments {
         $request->bindValue(':id_scans', $this->id_scans, PDO::PARAM_INT);
         return $request->execute();
     }
+
+     //Fonction qui permet de récupérer un commentaires en  fonctions de son ID //
 
     public function getCommentsById() {
         $query = 'SELECT `id` , DATE_FORMAT(`date`, "%d/%m/%Y à %Hh%i") AS `date`, `content` , `id_users` , `id_scans`
@@ -42,6 +47,8 @@ class comments {
         $request->execute();
         return $request->fetchAll(PDO::FETCH_OBJ);
     }
+
+      //Fonction qui permet de récupérer la liste des commentaires en fonction du scan //
 
     public function getCommentsListByScans() {
         $query = 'SELECT  DATE_FORMAT(`date`, "%d/%m/%Y à %Hh%i") AS `date`,`content`, `username` 

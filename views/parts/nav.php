@@ -1,5 +1,5 @@
 <nav class="navbar">
-    <a href="/accueil" class="logo">Scan</a>
+    <a href="/accueil" class="logo">ReadScan</a>
     <div class="links">
            <ul>
                 <li id="acc"><a href="/accueil" class="active">Accueil</a></li>

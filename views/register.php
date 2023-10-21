@@ -23,7 +23,7 @@
         
         <input type="text" name="username" id="username" placeholder="Username" value="<?= @$_POST['username'] ?>">
         <?php if (isset($formErrors['username'])) { ?>
-            <p><?= $formErrors['username'] ?></p>
+            <p class="errors"><?= $formErrors['username'] ?></p>
         <?php } ?>
         <i class='bx bx-user'></i>
         </div>
@@ -32,7 +32,7 @@
         
         <input type="password" name="password" id="password" placeholder="Mot de passe">
         <?php if (isset($formErrors['password'])) { ?>
-            <p><?= $formErrors['password'] ?></p>
+            <p class="errors"><?= $formErrors['password'] ?></p>
         <?php } ?>
         <i class='bx bx-lock-alt'></i>
         </div>
@@ -41,7 +41,7 @@
         
         <input type="password" name="passwordConfirm" id="passwordConfirm" placeholder="Vérif mot de passe">
         <?php if (isset($formErrors['passwordConfirm'])) { ?>
-            <p><?= $formErrors['passwordConfirm'] ?></p>
+            <p class="errors"><?= $formErrors['passwordConfirm'] ?></p>
         <?php } ?>
         </div>
         

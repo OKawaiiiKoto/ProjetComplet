@@ -11,24 +11,25 @@ if (count($_POST) > 0) {
     if (!empty($_POST['username'])) {
             $user->username = $_POST['username'];
             if ($user->checkUsernameAvaibility() == 0) {
-                $formErrors['username'] = $formErrors['password'] = 'L\'username ou le mot de passe est incorrect.';
+                $formErrors['username'] = $formErrors['password'] = ERROR_USERS_LOGIN;
             }
     } else {
-        $errors['username'] = 'L\'username est obligatoire';
+        $errors['username'] = ERROR_USERS_USERNAME_WRONG;
     }
     if (!empty($_POST['password'])) {
         if (!isset($formErrors['username'])) {
+            //"hash" transforme en une chaîne de caractères de longueur fixe, généralement de longueur fixe
             $user->password = $user->getHash();
             if (password_verify($_POST['password'], $user->password)) {
                 $_SESSION['user'] = $user->getInfos();
                  header('Location:/connect');
                  exit;
             } else {
-                $formErrors['username'] = $formErrors['password'] = 'L\'username ou le mot de passe est incorrect. 2';
+                $formErrors['username'] = $formErrors['password'] = ERROR_USERS_LOGIN;
             }
         }
     } else {
-        $formErrors['password'] = 'Le mot de passe est obligatoire';
+        $formErrors['password'] = ERROR_USERS_PASSWORD_WRONG;
     }
 }
 //var_dump($_SESSION);

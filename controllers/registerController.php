@@ -1,51 +1,65 @@
 <?php
+session_start();
+
 require_once '../models/usersModel.php';
+require_once '../errors.php';
+
 //var_dump($_POST);
 
+/*Un tableau $regex est défini, contenant des expressions régulières pour valider certains champs du formulaire,
+ tels que le nom d'utilisateur, le mot de passe et la date de naissance.*/ 
 $regex = [
     'username' => '/^(?=.[a-zA-Z]{3,})[a-zA-Z0-9-]+$/',
     'password' => '/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/',
     'birthdate' => '/^[0-9]{4}(-[0-9]{2}){2}$/',
 ];
 
-$formErrors = [];
+/*Initialisation de '$formErrors' pour stocker les erreurs éventuelles du formulaire.le tableau est utilisé pour 
+collecter et afficher les erreurs rencontrées lors de la validation des données du formulaire.*/
 
+$formErrors = [];
+/*Le code vérifie d'abord si des données ont été soumises via la méthode POST en utilisant if (count($_POST) > 0). 
+Si des données ont été soumises, le traitement du formulaire commence.*/ 
 if (count($_POST) > 0) {
     $user = new users;
+    /*Le code vérifie d'abord le champ "email" en vérifiant s'il est vide et s'il correspond à un format valide. 
+    Si le champ est valide,il est stocké dans l'objet $user. 
+    Ensuite, il vérifie si l'adresse e-mail est déjà utilisée dans la base de données. 
+    Si c'est le cas, une erreur est ajoutée au tableau $formErrors. */
     if (!empty($_POST['email'])) {
         if (filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
             $user->email = strip_tags($_POST['email']);
             try {
                 if ($user->checkEmailAvaibility() == 1) {
-                    $formErrors['email'] = 'l\'adresse mail est deja utilise.';
+                    $formErrors['email'] = ERROR_USERS_EMAIL_ALREADY_EXISTS;
                 }
             } catch (PDOException $e) {
                 // echo $e->getMessage();
-                $formErrors['general'] = 'Une erreur est survenue , l\'admin a été prévenu';
+                $formErrors['general'] = ERROR_GENERAL;
             }
         } else {
-            $formErrors['email'] = 'Votre adresse mail n\'est pas valide. Elle ne peut comporter que des lettres , tirets , underscores , points et un caractère spécial.';
+            $formErrors['email'] = ERROR_USERS_EMAIL_INVALID;
         }
     } else {
-        $formErrors['email'] = 'Veuillez renseigner votre adresse e-mail.';
+        $formErrors['email'] = ERROR_USERS_EMAIL_EMPTY;
     }
     if (!empty($_POST['username'])) {
         if (preg_match($regex['username'], $_POST['username'])) {
             $user->username = strip_tags($_POST['username']);
             try {
                 if ($user->checkUsernameAvaibility() == 1) {
-                    $formErrors['username'] = 'l\'username est deja utilise.';
+                    $formErrors['username'] = ERROR_USERS_USERNAME_EMPTY;
                 } 
             } catch (PDOException $e) {
                 // echo $e->getMessage();
-                $formErrors['general'] = 'Une erreur est survenue , l\'admin a été prévenu';
+                $formErrors['general'] = ERROR_GENERAL;
             }
         } else {
-            $formErrors['username'] = 'Veuillez renseigner votre nom d\'utilisateur.';
+            $formErrors['username'] = ERROR_USERS_USERNAME_INVALID;
         }
     if (!empty($_POST['password'])) {
         if (!preg_match($regex['password'], $_POST['password'])) {
-            $formErrors['password'] = 'Votre mdp n\'est pas valide. il doit co.';
+            $formErrors['password'] = ERROR_USERS_PASSWORD_INVALID;
         }
     }
     if (!empty($_POST['passwordConfirm'])) {
@@ -53,15 +67,16 @@ if (count($_POST) > 0) {
             if ($_POST['password'] == $_POST['passwordConfirm']) {
                 $user->password = password_hash($_POST['password'], PASSWORD_DEFAULT);
             } else {
-                $formErrors['password'] = $formErrors['passwordConfirm'] = 'Les mdps ne correspondent pas.';
+                $formErrors['password'] = $formErrors['passwordConfirm'] = ERROR_USERS_PASSWORD_DIFFERENT;
             }
         }
     } else {
-        $formErrors['passwordConfirm'] = 'Veuillez confirmer votre mdp';
+        $formErrors['passwordConfirm'] = ERROR_USERS_PASSWORD_CONFIRMATION_EMPTY;
     }
     if (!empty($_POST['birthdate'])) {
         if (preg_match($regex['birthdate'], $_POST['birthdate'])) {
             $date = explode('-', $_POST['birthdate']);
+            //Le champ "birthdate" est validé pour correspondre à un format de date spécifique
             if (checkdate($date[1], $date[2], $date[0])) {
                 $user->birthdate = $_POST['birthdate'];
             } else {
@@ -81,7 +96,7 @@ if (count($_POST) > 0) {
            header('Location:/connexion');
            exit;
         } catch (PDOException $e) {
-            $formErrors['general'] = 'Une erreur est survenue , l\'admin a été prévenu';
+            $formErrors['general'] = ERROR_GENERAL;
         }
     }
     //var_dump($formErrors);
