@@ -1,7 +1,7 @@
 RewriteEngine On
 
-RewriteRule ^accueil$ menu.php
 
+RewriteRule ^accueil$ controllers/accueilController.php
 RewriteRule ^connect$ controllers/mainController.php
 RewriteRule ^inscription$ controllers/registerController.php
 RewriteRule ^connexion$ controllers/loginController.php
@@ -13,5 +13,5 @@ RewriteRule ^modifier-livre-([0-9]+)$ controllers/updateBooksController.php?id=$
 RewriteRule ^liste-livres$ controllers/getBooksListController.php
 RewriteRule ^page-livre-([0-9]+)$ controllers/getBooksController.php?id=$1
 RewriteRule ^ajout-scans-([0-9]+)$ controllers/scanController.php?id=$1
-RewriteRule ^chapitres-([0-9]+)$ controllers/imagesController.php?
+RewriteRule ^chapitre-([0-9]+)$ controllers/imagesController.php?chapter=$1
 RewriteRule ^supprimer-mon-compte$ controllers/deleteAccountController.php

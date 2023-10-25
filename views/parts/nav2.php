@@ -2,19 +2,18 @@
     <a href="/connect" class="logo">ReadScan</a>
     <div class="links">
            <ul>
-                <li id="acc"><a href="/connect" class="active">Accueil</a></li>
-                <li><a href="Romance.php" >Shojo</a></li>
-                <li><a href="Romance.php" >Shojo</a></li>
-                <li><a href="Fantasy.php">Fantasy</a></li>
-                <li><a href=".php"> Shonen</a></li>
-                <li><a href="mha.php"> & </a></li>
-                <li><a href=".php">Slice of life</a></li>
+            <?php if (isset($_SESSION['user']['id_usersroles']) && $_SESSION['user']['id_usersroles'] == 2) { ?> 
+             <li id="ll"><a href="/liste-livres" class="active">Liste</a></li>
+             <li id="ll"><a href="/ajouter-livre" >Ajout Livres</a></li> 
+             <?php } ?>
+                <li><a href="/accueil">Fantasy</a></li>
+                <li><a href="."> Shonen</a></li>
+                <li><a href=""> & </a></li>
+                <li><a href=".">Slice of life</a></li>
             </ul>
         </div>
         <div class="register">
-        <?php 
-        echo $_SESSION['user']['username']; 
-        ?>
+        <p class="username"><?= $_SESSION['user']['username'] ?></p>
         <a href="deconnexion">déconnexion</a>
         <a href="changements">Modification infos</a>
         </div>

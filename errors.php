@@ -35,6 +35,7 @@ define('ERROR_USERS_BIRTHDATE_INVALID', 'La date de naissance doit être au form
 define('SUCCESS_POSTS_ADD', 'Le livre a été ajouté avec succès');
 define('ERROR_POSTS_GENERAL', 'Le livre n\'a pas pu être créé. Veuillez réessayer plus tard.');
 define('ERROR_NAME_TITLE_EMPTY', 'Le nom est obligatoire.');
+define('SUCCESS_SCANS_ADD', 'Le chapitre a été ajouté avec succès');
 
 
 // Titre

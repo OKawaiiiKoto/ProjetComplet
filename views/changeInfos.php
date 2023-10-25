@@ -2,7 +2,7 @@
     <h1>Mettre à jour le profil</h1>
     <h2>Mes infos</h2>
     <?php if (isset($success['infos'])) { ?>
-        <p class="successText"><?= $success['infos'] ?></p>
+        <p class="success"><?= $success['infos'] ?></p>
     <?php } ?>
     <div>
     <form action="" method="post">
@@ -23,7 +23,7 @@
 
     <h2>Mon mot de passe</h2>
     <?php if (isset($success['password'])) { ?>
-        <p class="successText"><?= $success['password'] ?></p>
+        <p class="success"><?= $success['password'] ?></p>
     <?php } ?>
     <form action="" method="post">
         <label for="currentPassword">Mot de passe actuel</label>
@@ -58,7 +58,7 @@
                 <p>Êtes-vous sûr ?</p>
             </div>
             <div class="modal-footer">
-                <form action="/accueil" method="POST">
+                <form action="/changements" method="POST">
                     <input type="submit" value="Valider la suppression de mon compte" name="deleteAccount">
                 </form>
                 <span class="close-btn">Annuler</span>

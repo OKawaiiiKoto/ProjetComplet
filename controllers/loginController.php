@@ -4,6 +4,7 @@ session_start();
 $formErrors = [];
 
 require_once '../models/usersModel.php';
+require_once '../errors.php';
 
 if (count($_POST) > 0) {
     $user = new users();

@@ -99,8 +99,11 @@ if(count($formErrors) == 0) {
         $formErrors['general'] = ERROR_GENERAL;
     }
   }
+  header('Location:/connect');
+    exit;
 }
-  /*if (isset($_POST['delete'])) {
+
+if (isset($_POST['deleteAccount'])) {
     if($user->deleteAccount()){
         
         unset($_SESSION['user']);
@@ -108,11 +111,10 @@ if(count($formErrors) == 0) {
         header('Location: /accueil');
         exit;
     }
-  }*/
+  }
 
 
 $userInfos = $user->getOneById();
 
 require_once '../views/parts/header2.php';
 require_once '../views/changeInfos.php';
-require_once '../views/parts/footer2.php';

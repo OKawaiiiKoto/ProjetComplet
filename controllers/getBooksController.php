@@ -23,10 +23,10 @@ if($book->checkIfExists() == 1) {
 //Appelle de la méthode 'getScanByIdBooks' avec l'objet $scan 
 $scanList = $scan->getScanByIdBooks(); 
 
+
 //var_dump($scanList);
 
 require_once '../views/parts/header.php';
 require_once '../views/parts/nav2.php';
 require_once '../views/getBooks.php';
-require_once '../views/scanList.php';
-//require_once '../views/parts/footer.php';
+require_once '../views/parts/footer2.php';

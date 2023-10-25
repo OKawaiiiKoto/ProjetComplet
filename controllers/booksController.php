@@ -74,7 +74,7 @@ if (count($_POST) > 0) {
     
     if (count($formErrors) == 0) {
         
-        if (move_uploaded_file($_FILES['image']['tmp_name'], '../assets' . $path)) {
+        if (move_uploaded_file($_FILES['image']['tmp_name'], '../assets/img/' . $path)) {
             $book->image = $path;
             
             if($book->add()){
@@ -88,9 +88,10 @@ if (count($_POST) > 0) {
             $formErrors['image'] = ERROR_POSTS_IMAGE_UPLOAD;
         }        
     }
+    header('Location:/liste-livres');
+    exit;
 }
 //var_dump($_POST);
 
 require_once '../views/parts/header.php';
 require_once '../views/addBooks.php';
-require_once '../views/parts/footer.php';

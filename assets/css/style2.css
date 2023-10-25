@@ -1,9 +1,9 @@
+ @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500&display=swap');
 *{
     padding: 0;
     text-decoration: none;
     list-style: none;
     box-sizing: border-box;
-    font-family: 'Times New Roman', Times, serif;
   }
   
   body {
@@ -11,11 +11,18 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    font-family: "Roboto", sans-serif;
     margin: 0;
     padding: 0;
     background-color: rgba(77, 77, 77, 0.829);
+    font-family: 'Quicksand', sans-serif;
   }
+
+  .errors {
+    color: rgb(255, 133, 133);
+  }
+.success {
+    color: rgb(8, 255, 8);
+}
   .wrapper {
     width: 400px;
     background-color: #00000046;
@@ -38,8 +45,9 @@
 .wrapper .inputbox {
     position: relative;
     width: 70%;
-    height: 30px;
-    margin: 20px 21px;
+    margin: 20px 23px;
+    border-radius: 30px;
+    height: 35px; 
 }
 
 .inputbox input {
@@ -57,13 +65,7 @@
 .inputbox input::placeholder {
 color: white;
 }
-.inputbox i {
-    position: absolute;
-    right: -45px;
-    top: 39%;
-    transform: translate(-50%);
-    font-size: 20px;
-}
+
 .wrapper .remember {
     display: flex;
     justify-content: space-between;
@@ -160,6 +162,55 @@ button {
         color: rgb(0, 145, 255);
         font-weight: 600;
     }
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        box-sizing: border-box;
+        width: 100%;
+        background-color: #0000004c;
+    }
+    .navbar a {
+        color: rgb(255, 255, 255);
+    }
+    .navbar .logo {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-top: 9px;
+        margin-left: 34px;
+        padding-bottom: 10px;
+    }
+    .navbar .links ul {
+        display: flex;
+        align-items: center;
+        padding-top: 14px;
+    }
+    .navbar .links ul li {
+        margin:  5px 25px;
+        right: 0;
+    }
+    
+    .navbar .links ul #acc {
+        display: flex;
+    }
+    .navbar .burger {
+        display: none;
+        position: absolute;
+        right: 45px;
+        width: 36px;
+        color: white;
+        top: 30px;
+    }
+    .register {
+        display: flex;
+        padding-right: 15px;
+        padding-top: 22px;
+    }
+    .register a {
+        margin-left: 10px; /* Ajouter de l'espace à gauche des liens */
+    }
+    .navbutton{
+        margin-right: 10px;
+    }
 @media screen and (min-width: 300px) and (max-width: 724px) {
     .wrapper {
         width: 355px;
@@ -168,5 +219,53 @@ button {
         border-radius: 10px;
         padding: 30px 40px;
     }
-
+    .navbar {
+        padding: 0;
+    }
+    .navbar .logo {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-top: 20px;
+        margin-left: 20px;
+    }
+.navbar a {
+    text-align: center;
+}
+.links ul {display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+    .navbar .burger{
+            display: block;       
+            position: absolute;
+            right: 10px;
+            width: 36px;
+            color: white;
+            top: 15px;
+    }
+    .links {
+        display: flex;
+        position: absolute;
+        flex-direction: column;
+        width: 100vw;
+        height: 100vh;
+        backdrop-filter: blur(5px);
+        align-items: center;
+        justify-content: center;
+        margin-left: -100%;
+        transition: all 1s ease;
+    }
+    .links.menu-mobile {
+        margin-left: 0;
+    }
+    .navbar .links ul li  {
+        margin: 25px 0;
+        font-size: 1.1rem;
+    }
+    .navbar .logo {
+       display: none;
+    }
+.register {
+    display: none;
+}
 }

@@ -3,7 +3,6 @@
     <div class="links">
            <ul>
                 <li id="acc"><a href="/accueil" class="active">Accueil</a></li>
-                <li><a href="Romance.php" >Shojo</a></li>
                 <li><a href="Fantasy.php">Fantasy</a></li>
                 <li><a href=".php"> Shonen</a></li>
                 <li><a href="mha.php"> & </a></li>

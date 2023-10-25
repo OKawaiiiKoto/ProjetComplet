@@ -1,10 +1,8 @@
 <container>
-    <h2>Chapitres</h2>
-    <?php foreach($scanList as $sl) { ?>
-        <div class="comment">
-            <a href="/chapitres-"><?= $sl->chapter ?></a> 
-        </div>
+    <div class="scans">
+        <?php foreach ($imagesList as $il) { ?>
+            <img src="assets/img/scans/<?= $il->images ?>">
         <?php } ?>
+        <button id="scrollToTopButton">&#9650;</button>
+    </div>
 </container>
- ** A mettre dans getBooks **
-       Dans la zone Infos 

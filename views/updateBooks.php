@@ -1,11 +1,11 @@
-    <div  id="book-form">
+    <div id="book-form">
         <form action="#" method="post" enctype="multipart/form-data" class="left-form">
             <div class="book-title">
                 <h1>Modifier Manga</h1>
             </div>
             <div>
                 <?php if (isset($success)) { ?>
-                    <p class="successText"><?= $success ?></p>
+                    <p class="success"><?= $success ?></p>
                 <?php } ?>
             </div>
 
@@ -31,22 +31,22 @@
         </form>
         <button id="open-modal-btn">Supprimer le livre</button>
 
-<div id="modal-container" class="modal-container">
-    <div class="modal">
-        <div class="modal-header">
-            <span class="close-btn">&times;</span>
+        <div id="modal-container" class="modal-container">
+            <div class="modal">
+                <div class="modal-header">
+                    <span class="close-btn">&times;</span>
+                </div>
+                <div class="modal-content">
+                    <p>Êtes-vous sûr ?</p>
+                </div>
+                <div class="modal-footer">
+                    <form action="/modifier-livre-<?= $_GET['id'] ?>" method="POST">
+                        <input type="submit" value="Valider l" name="deleteBooks">
+                    </form>
+                    <span class="close-btn">Annuler</span>
+                </div>
+            </div>
         </div>
-        <div class="modal-content">
-            <p>Êtes-vous sûr ?</p>
-        </div>
-        <div class="modal-footer">
-            <form action="/liste-livres" method="POST">
-                <input type="submit" value="Valider l" name="deleteBooks">
-            </form>
-            <span class="close-btn">Annuler</span>
-        </div>
-    </div>
-</div>
         <form action="#" method="post" enctype="multipart/form-data" class="right-form">
             <label for="image">Image</label>
             <input type="file" name="image" id="image">
@@ -58,4 +58,4 @@
             <img src="../assets/img/<?= $bookInfos->image ?>" class="custom-image">
         </form>
     </div>
-</div>
+    </div>

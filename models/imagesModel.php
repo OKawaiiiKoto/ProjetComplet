@@ -22,12 +22,14 @@ public function __construct()
         $request->bindValue(':id_scans', $this->id_scans, PDO::PARAM_INT);
         return $request->execute();
     }
-    public function getImagesByIdScans() {
+
+    public function get($chapter) {
         $query = 'SELECT `images` 
-        FROM `a5cy8_images` 
-        WHERE `id_scans` = :id_scans;';
+        FROM `a5cy8_images` AS `i` 
+        INNER JOIN `a5cy8_scans` AS `s` ON `s`.`id` = `i`.`id_scans` 
+        WHERE `chapter` = :chapter;';
         $request = $this->db->prepare($query);
-        $request->bindValue(':id_scans',$this->id_scans, PDO::PARAM_INT);
+        $request->bindValue(':chapter',$chapter, PDO::PARAM_INT);
         $request->execute();
         return $request->fetchAll(PDO::FETCH_OBJ);
     }

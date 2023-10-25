@@ -1,12 +1,13 @@
-<?php include "views/parts/header.php" ;?>
-<?php include "views/parts/nav.php" ;?>
-
-
-<div class="news">
-    <div class="title">
-        <h2>News</h2>
+<container>
+    <div class="book-container">
+        <?php $count = 0; ?>
+        <?php foreach($booksList AS $bl) { ?>
+            <div class="book">
+                <a href="page-livre-<?= $bl->id ?>">
+                    <img src="../assets/img/<?= $bl->image ?>" alt="<?= $bl->name ?>">
+                    <div class="book-title"><?= $bl->name ?></div>
+                </a>
+            </div>
+        <?php } ?>
     </div>
-</div>
-
-
-<?php include "views/parts/footer.php" ;?>
+</container>

@@ -7,7 +7,7 @@ require_once '../errors.php';
 //var_dump($_POST);
 
 /*Un tableau $regex est défini, contenant des expressions régulières pour valider certains champs du formulaire,
- tels que le nom d'utilisateur, le mot de passe et la date de naissance.*/ 
+ tels que le nom d'utilisateur, le mot de passe et la date de naissance.*/
 $regex = [
     'username' => '/^(?=.[a-zA-Z]{3,})[a-zA-Z0-9-]+$/',
     'password' => '/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/',
@@ -19,7 +19,7 @@ collecter et afficher les erreurs rencontrées lors de la validation des donnée
 
 $formErrors = [];
 /*Le code vérifie d'abord si des données ont été soumises via la méthode POST en utilisant if (count($_POST) > 0). 
-Si des données ont été soumises, le traitement du formulaire commence.*/ 
+Si des données ont été soumises, le traitement du formulaire commence.*/
 if (count($_POST) > 0) {
     $user = new users;
     /*Le code vérifie d'abord le champ "email" en vérifiant s'il est vide et s'il correspond à un format valide. 
@@ -47,9 +47,9 @@ if (count($_POST) > 0) {
         if (preg_match($regex['username'], $_POST['username'])) {
             $user->username = strip_tags($_POST['username']);
             try {
-                if ($user->checkUsernameAvaibility() == 1) {
+                if ($user->checkUsernameAvaibility() > 0) {
                     $formErrors['username'] = ERROR_USERS_USERNAME_EMPTY;
-                } 
+                }
             } catch (PDOException $e) {
                 // echo $e->getMessage();
                 $formErrors['general'] = ERROR_GENERAL;
@@ -57,6 +57,10 @@ if (count($_POST) > 0) {
         } else {
             $formErrors['username'] = ERROR_USERS_USERNAME_INVALID;
         }
+    } else {
+        $formErrors['username'] = ERROR_USERS_USERNAME_EMPTY;
+    }
+
     if (!empty($_POST['password'])) {
         if (!preg_match($regex['password'], $_POST['password'])) {
             $formErrors['password'] = ERROR_USERS_PASSWORD_INVALID;
@@ -93,15 +97,15 @@ if (count($_POST) > 0) {
             if ($user->add()) {
                 $succes = true;
             }
-           header('Location:/connexion');
-           exit;
+            header('Location:/connexion');
+            exit;
         } catch (PDOException $e) {
             $formErrors['general'] = ERROR_GENERAL;
         }
     }
     //var_dump($formErrors);
 }
-}
 //var_dump($_POST);
 require_once '../views/parts/header2.php';
+
 require_once '../views/register.php';

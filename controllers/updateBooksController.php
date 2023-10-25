@@ -90,6 +90,7 @@ if (isset($_POST['deleteBooks'])) {
         exit;
     }
   }
+
 if (!empty($_GET['id'])) {
     if ($book->checkIfExists() == 0) {
         header('Location: /liste-livres');
@@ -101,5 +102,6 @@ $bookInfos = $book->getOneById();
 //var_dump($bookInfos);
 
 require_once '../views/parts/header.php';
+require_once '../views/parts/nav.php';
 require_once '../views/updateBooks.php';
 require_once '../views/parts/footer2.php';

@@ -1,9 +1,9 @@
 <?php if (isset($formErrors['general'])) { ?>
-    <p><?= $formErrors['general'] ?></p>
+    <p class="errors"><?= $formErrors['general'] ?></p>
 <?php } ?>
 
 <?php if (isset($success)) { ?>
-    <p>Votre inscription a bien été prise en compte.</p>
+    <p class="success">Votre inscription a bien été prise en compte.</p>
     <p>Vous pouvez <a href="">vous connecter</a> dès maintenant.</p>
 <?php } else { ?>
 
@@ -15,7 +15,7 @@
         
         <input type="email" name="email" id="email" placeholder="Adresse mail" value="<?= @$_POST['email'] ?>">
         <?php if (isset($formErrors['email'])) { ?>
-            <p><?= $formErrors['email'] ?></p>
+            <p class="errors"><?= $formErrors['email'] ?></p>
         <?php } ?>
         </div>
         
@@ -25,7 +25,6 @@
         <?php if (isset($formErrors['username'])) { ?>
             <p class="errors"><?= $formErrors['username'] ?></p>
         <?php } ?>
-        <i class='bx bx-user'></i>
         </div>
         
         <div class="inputbox">
@@ -34,7 +33,6 @@
         <?php if (isset($formErrors['password'])) { ?>
             <p class="errors"><?= $formErrors['password'] ?></p>
         <?php } ?>
-        <i class='bx bx-lock-alt'></i>
         </div>
         
         <div class="inputbox">
@@ -49,7 +47,7 @@
         
         <input type="date" name="birthdate" id="birthdate" value="<?= @$_POST['birthdate'] ?>">
         <?php if (isset($formErrors['birthdate'])) { ?>
-            <p><?= $formErrors['birthdate'] ?></p>
+            <p class="errors"><?= $formErrors['birthdate'] ?></p>
         <?php } ?>
         </div>
         
