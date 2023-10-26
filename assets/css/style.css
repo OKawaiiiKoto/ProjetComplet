@@ -66,6 +66,7 @@
 }
 .navbar .burger {
     display: none;
+    z-index: 1;
     position: absolute;
     right: 45px;
     width: 36px;
@@ -84,86 +85,6 @@
     margin-right: 10px;
 }
 /* Page lecture */
-#main-container {
-    max-width: 800px;
-    margin: 15px auto;
-    background-color: #0000004c;
-    padding: 20px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-    text-align: center;
-}
-
-.centered-content {
-    text-align: center;
-}
-
-#comment-form {
-    margin-top: 20px;
-    padding: 20px;
-    background-color: #ffffff;
-    border: 1px solid #000000;
-    border-radius: 5px;
-}
-
-.form-label {
-    display: block;
-    font-weight: bold;
-}
-
-#comment-textarea {
-    width: 100%;
-    box-sizing: border-box;
-    height: 150px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-bottom: 10px;
-}
-
-#submit-button {
-    background-color: #000000;
-    color: #ff7f0f;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-#comments-container {
-    background-color: #fff;
-    margin-top: 20px;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.section-heading {
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #333;
-}
-
-.comment {
-    border-bottom: 1px solid #000000;
-    margin-bottom: 20px;
-    padding-bottom: 20px;
-}
-
-.comment-header {
-    font-weight: bold;
-}
-
-.comment-username {
-    color: #ff7f0f;
-}
-
-.comment-date {
-    color: #000000;
-}
-
-.comment-content {
-    margin-top: 10px;
-}
 .scans {
     display: flex;
     flex-direction: column;
@@ -320,7 +241,7 @@ footer {
     justify-content: space-between;
     align-items: center; /* Centrage vertical du contenu */
     width: 100%;
-    position: fixed;
+    position: relative;
     bottom: 0;
 }
 
@@ -519,6 +440,7 @@ textarea {
     border-radius: 15px;
 }
 
+
 @media screen and (min-width: 1150px) and (max-width: 1600px) {
   
     /* Page Accessible aux Modos*/
@@ -567,7 +489,6 @@ a {
  }
 
 @media screen and (min-width: 901px) and (max-width: 1149px) {
-  
     /* Page Accessible aux Modos*/
 .book-container {
     margin: 10px 10px 0 15px;
@@ -647,7 +568,7 @@ a {
         flex-direction: column;
         width: 100vw;
         height: 100vh;
-        backdrop-filter: blur(5px);
+        backdrop-filter: blur(20px);
         align-items: center;
         justify-content: center;
         margin-left: -100%;
@@ -655,6 +576,7 @@ a {
     }
     .links.menu-mobile {
         margin-left: 0;
+        z-index: 1;
     }
     .navbar .links ul li  {
         margin: 25px 0;
@@ -668,12 +590,6 @@ a {
 }
 
     /* Page Accessible aux Modos*/
-
-
-container {
-    max-width: 800px;
-    margin: 0 auto;
-}
 
 .book-container {
     display: grid;
@@ -796,6 +712,16 @@ p {
     
 }
  }
+ @media screen and (min-width: 900px) and (max-width: 1110px) {footer {
+  display: none;
+}
+}
+ @media screen and (min-width: 300px) and (max-width: 899px) {
+    footer {
+    display: none;
+    }
+ }
+
  @media screen and (min-width: 700px) and (max-width: 800px) {
     /* Pages Des Mangas */ 
 
@@ -870,7 +796,7 @@ p {
         flex-direction: column;
         width: 100vw;
         height: 100vh;
-        backdrop-filter: blur(5px);
+        backdrop-filter: blur(20px);
         align-items: center;
         justify-content: center;
         margin-left: -100%;
@@ -878,6 +804,7 @@ p {
     }
     .links.menu-mobile {
         margin-left: 0;
+        z-index: 1;
     }
     .navbar .links ul li  {
         margin: 25px 0;
@@ -998,7 +925,7 @@ p {
         flex-direction: column;
         width: 100vw;
         height: 100vh;
-        backdrop-filter: blur(5px);
+        backdrop-filter: blur(20px);
         align-items: center;
         justify-content: center;
         margin-left: -100%;
@@ -1006,6 +933,7 @@ p {
     }
     .links.menu-mobile {
         margin-left: 0;
+        z-index: 1;
     }
     .navbar .links ul li  {
         margin: 25px 0;

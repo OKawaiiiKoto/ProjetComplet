@@ -102,6 +102,6 @@ $bookInfos = $book->getOneById();
 //var_dump($bookInfos);
 
 require_once '../views/parts/header.php';
-require_once '../views/parts/nav.php';
+require_once '../views/parts/nav2.php';
 require_once '../views/updateBooks.php';
-require_once '../views/parts/footer2.php';
+require_once '../views/parts/footer.php';

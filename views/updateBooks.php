@@ -28,8 +28,7 @@
             <?php } ?>
 
             <input type="submit" value="Publier" name="update" class="custom-btn">
-        </form>
-        <button id="open-modal-btn">Supprimer le livre</button>
+            <button id="open-modal-btn" class="custom-btn">Supprimer le livre</button>
 
         <div id="modal-container" class="modal-container">
             <div class="modal">
@@ -47,6 +46,8 @@
                 </div>
             </div>
         </div>
+        </form>
+       
         <form action="#" method="post" enctype="multipart/form-data" class="right-form">
             <label for="image">Image</label>
             <input type="file" name="image" id="image">

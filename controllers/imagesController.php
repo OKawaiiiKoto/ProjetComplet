@@ -14,5 +14,4 @@ $imagesList = $image->get($_GET['chapter']);
 require_once '../views/parts/header.php';
 require_once '../views/parts/nav2.php';
 require_once '../views/scanList.php';
-require_once '../controllers/commentsController.php';
 require_once '../views/parts/footer2.php';

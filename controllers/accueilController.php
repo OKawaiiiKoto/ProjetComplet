@@ -8,6 +8,6 @@ $booksList = $book->getList();
 
 
 require_once '../views/parts/header.php';
-require_once '../views/parts/nav.php';
+require_once '../views/parts/nav2.php';
 require_once '../menu.php';
-require_once '../views/parts/footer3.php';
+require_once '../views/parts/footer.php';

@@ -1,6 +1,10 @@
 <footer>
         <div class="left">
+        <?php if (isset($_SESSION['user']['id'])) { ?>
             <a href="/connect">
+            <?php } else { ?>
+                <a href="/accueil">
+                <?php } ?>
                 <img src="../../assets/img/jjk 1.jpg" alt="Logo">
                 ReadScan
             </a>
