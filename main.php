@@ -9,5 +9,6 @@
                 </a>
             </div>
         <?php } ?>
+        <button id="scrollToTopButton">&#9650;</button>
     </div>
 </container>

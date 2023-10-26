@@ -116,5 +116,6 @@ if (isset($_POST['deleteAccount'])) {
 
 $userInfos = $user->getOneById();
 
-require_once '../views/parts/header2.php';
+require_once '../views/parts/headerinfos.php';
 require_once '../views/changeInfos.php';
+require_once '../views/parts/footer2.php';

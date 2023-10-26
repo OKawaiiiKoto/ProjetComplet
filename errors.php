@@ -6,7 +6,7 @@ define('ERROR_GENERAL', 'Le site est temporairement indisponible. Veuillez rées
 //USERS
 define('SUCCESS_USERS_ADD', 'L\'utilisateur a été ajouté avec succès');
 define('ERROR_USERS_GENERAL', 'L\'utilisateur n\'a pas pu être créé. Veuillez réessayer plus tard.');
-define('ERROR_USERS_LOGIN', 'L\'adresse mail ou le mot de passe est incorrect.');
+define('ERROR_USERS_LOGIN', 'L\'username ou le mot de passe est incorrect.');
 define('SUCCESS_USERS_UPDATE', 'Vos informations ont été mises à jour avec succès.');
 define('SUCCESS_USERS_UPDATE_PASSWORD', 'Votre mot de passe a été mis à jour avec succès.');
 

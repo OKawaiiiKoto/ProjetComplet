@@ -19,6 +19,8 @@
 
   .errors {
     color: rgb(255, 133, 133);
+    position: relative;
+    left: 20px;
   }
 .success {
     color: rgb(8, 255, 8);
@@ -47,7 +49,6 @@
     width: 70%;
     margin: 20px 23px;
     border-radius: 30px;
-    height: 35px; 
 }
 
 .inputbox input {
@@ -132,7 +133,6 @@ color: white;
 }
 
 .modal-footer {
-    align-items: center;
     font-size: 1rem;
 }
 

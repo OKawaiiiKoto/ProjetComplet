@@ -85,6 +85,10 @@
     margin-right: 10px;
 }
 /* Page lecture */
+container {
+    max-width: 800px;
+    margin: 0 ;
+}
 .scans {
     display: flex;
     flex-direction: column;
@@ -169,7 +173,7 @@ p {
     height: 35px; 
 }
 .inputbox input {
-    width: 100%;
+    width: 125%;
     height: 100%;
     background: transparent;
     border: none;
@@ -196,6 +200,9 @@ color: white;
 .remember a {
     color: white;
     text-decoration: none;
+}
+#publier {
+    font-size: 15px;
 }
 .remember a:hover {
     text-decoration: underline;
@@ -288,19 +295,20 @@ footer .center a {
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.4);
 }
-
+#supp {
+    color: white;
+}
 .modal {
-    background-color: #fefeff;
+    background-color: #000000b6;
     margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
+    color: white;
     width: 80%;
+    text-align: center;
 }
 
 .modal-footer {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
     font-size: 1rem;
 }
 
@@ -312,11 +320,19 @@ footer .center a {
 
 .close-btn:hover,
 .close-btn:focus {
-    color: #000;
+    color: #fafafa;
     text-decoration: none;
     cursor: pointer;
 }
 
+.valider {
+    cursor: pointer;
+    font-size: 20px;
+    color: rgb(255, 29, 29);
+    font-weight: 600;
+    padding: 5px 5px 5px 5px;
+    margin-top: 15px;
+}
 /* Page Accessible aux Modos*/
 
 .book-container {
@@ -367,7 +383,7 @@ a {
 
 #book-form {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: flex-start;
 }
 
@@ -383,11 +399,12 @@ a {
 }
 
 .left-form {
-    width: 45%;
+    width: 25%;
+    text-align: center;
 }
 
 .right-form {
-    width: 50%;
+    width: 35%;
 }
 
 .left-form label, .right-form label {
@@ -430,6 +447,7 @@ textarea {
     color: rgb(0, 145, 255);
     font-weight: 600;
     margin-top: 10px;
+    padding: 5px;
 }
 
 .custom-image {

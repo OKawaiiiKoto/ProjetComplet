@@ -34,7 +34,7 @@
         <?php } ?>
 
 
-        <input type="submit" value="Publier" class="btn">
+        <input type="submit" value="Publier" class="btn" id="publier">
 
 
     </form>

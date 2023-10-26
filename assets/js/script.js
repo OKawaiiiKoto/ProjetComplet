@@ -6,7 +6,7 @@ navLinks.classList.toggle('menu-mobile')
 
 
 const scrollToTopButton = document.getElementById("scrollToTopButton");
-const scrollDuration = 700; 
+const scrollDuration = 400; 
 function scrollToTop() {
     const scrollStep = window.scrollY / (scrollDuration / 15);
     

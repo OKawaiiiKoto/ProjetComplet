@@ -1,5 +1,6 @@
     <div id="book-form">
-        <form action="#" method="post" enctype="multipart/form-data" class="left-form">
+        <div class="left-form">
+        <form action="#" method="post" enctype="multipart/form-data">
             <div class="book-title">
                 <h1>Modifier Manga</h1>
             </div>
@@ -26,29 +27,27 @@
             <?php if (isset($formErrors['summary'])) { ?>
                 <p class="errorText"><?= $formErrors['summary'] ?></p>
             <?php } ?>
-
             <input type="submit" value="Publier" name="update" class="custom-btn">
-            <button id="open-modal-btn" class="custom-btn">Supprimer le livre</button>
-
+        </form>
+        <button id="open-modal-btn" class="custom-btn">Supprimer le livre</button>
         <div id="modal-container" class="modal-container">
             <div class="modal">
                 <div class="modal-header">
                     <span class="close-btn">&times;</span>
                 </div>
                 <div class="modal-content">
-                    <p>Êtes-vous sûr ?</p>
+                    <p id="supp">Êtes-vous sûr ?</p>
                 </div>
                 <div class="modal-footer">
-                    <form action="/modifier-livre-<?= $_GET['id'] ?>" method="POST">
-                        <input type="submit" value="Valider l" name="deleteBooks">
+                    <form action="#" method="POST">
+                        <input type="submit" value="Confirmer" name="deleteBooks" class="valider">
                     </form>
                     <span class="close-btn">Annuler</span>
                 </div>
             </div>
         </div>
-        </form>
-       
-        <form action="#" method="post" enctype="multipart/form-data" class="right-form">
+        </div>
+        <form action="" method="post" enctype="multipart/form-data" class="right-form">
             <label for="image">Image</label>
             <input type="file" name="image" id="image">
             <?php if (isset($formErrors['image'])) { ?>
