@@ -9,7 +9,6 @@ if (!isset($_SESSION['user'])) {
 require_once '../models/booksModel.php';
 require_once '../errors.php';
 
-
 $formErrors = [];
 
 if (count($_POST) > 0) {
@@ -18,10 +17,6 @@ if (count($_POST) > 0) {
 
     if (!empty($_POST['name'])) {
         $book->name = strip_tags($_POST['name']);
-       /* try {
-            if ($user->checkBooksAvaibility() == 1) {
-                $formErrors['name'] = 'le nom est deja utilise.';
-            }*/
     } else {
         $formErrors['name'] = ERROR_NAME_TITLE_EMPTY;
     }
@@ -88,10 +83,11 @@ if (count($_POST) > 0) {
             $formErrors['image'] = ERROR_POSTS_IMAGE_UPLOAD;
         }        
     }
-    header('Location:/liste-livres');
-    exit;
+    /*header('Location:/liste-livres');
+    exit;*/
 }
 //var_dump($_POST);
 
 require_once '../views/parts/header.php';
+require_once '../views/parts/nav2.php';
 require_once '../views/addBooks.php';

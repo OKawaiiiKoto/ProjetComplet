@@ -35,7 +35,7 @@ if (isset($_POST['update'])) {
 
     if(count($formErrors) == 0){
         if($book->update()){
-            $success = "Bien reçu repos soldat";
+            $success = "Les informations ont étaient mise à jour";
         }
     }
 }
@@ -84,8 +84,10 @@ if(isset($_POST['updateImage'])){
 }
 
 if (isset($_POST['deleteBooks'])) {
+    //Si méthode de suppression lancée
     if($book->deleteBooks()){
-        
+        //Je détruit les données du livre
+        //et je redirige vers la page des livres
         header('Location: /liste-livres');
         exit;
     }

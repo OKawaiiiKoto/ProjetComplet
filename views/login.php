@@ -1,6 +1,6 @@
     <div class="wrapper">
     <form method="post" action="#">
-        <h2>Login</h2>
+        <h2>Connexion</h2>
         <div class="inputbox">
         <input type="text" name="username" id="username2" placeholder="Username" maxlength="15" required>
         <?php if (isset($formErrors['username'])) { ?>

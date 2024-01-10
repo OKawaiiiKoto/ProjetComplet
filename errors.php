@@ -36,6 +36,7 @@ define('SUCCESS_POSTS_ADD', 'Le livre a été ajouté avec succès');
 define('ERROR_POSTS_GENERAL', 'Le livre n\'a pas pu être créé. Veuillez réessayer plus tard.');
 define('ERROR_NAME_TITLE_EMPTY', 'Le nom est obligatoire.');
 define('SUCCESS_SCANS_ADD', 'Le chapitre a été ajouté avec succès');
+define('ERROR_NAME_TITLE_INVALID', 'Le nom du livre doit contenir au minimum 3 lettres et ne peut avoir que des lettres' );
 
 
 // Titre
@@ -44,6 +45,7 @@ define('ERROR_POSTS_TITLE_EMPTY', 'Le titre est obligatoire.');
 // Contenu
 define('ERROR_POSTS_CONTENT_EMPTY', 'Le contenu est obligatoire.');
 define('ERROR_YEAR_CONTENT_EMPTY', 'La date  est obligatoire.');
+define('ERROR_YEAR_CONTENT_INVALID', 'La date ne peut contenir que des chiffres.');
 
 // Image
 define('ERROR_POSTS_IMAGE_EMPTY', 'L\'image est obligatoire.');

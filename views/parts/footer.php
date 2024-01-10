@@ -12,6 +12,7 @@
         <div class="center"></div>
         <div class="right">
             <a href="#">Aide</a>
+            <a href="#">RGPD</a>
         </div>
     </footer>
 <script src="assets/js/script.js"></script>

@@ -48,7 +48,7 @@ if (count($_POST) > 0) {
             $user->username = strip_tags($_POST['username']);
             try {
                 if ($user->checkUsernameAvaibility() > 0) {
-                    $formErrors['username'] = ERROR_USERS_USERNAME_EMPTY;
+                    $formErrors['username'] = ERROR_USERS_USERNAME_ALREADY_EXISTS;
                 }
             } catch (PDOException $e) {
                 // echo $e->getMessage();

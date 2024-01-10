@@ -67,7 +67,7 @@ if (count($_POST) > 0) {
    }
 
    if (count($formErrors) == 0) {
-      /* try, une transaction est initiée avec $t->beginTransaction(). 
+      /* try repere des potentielle erreur pdo, une transaction est initiée avec $t->beginTransaction(). 
  Cela signifie que toutes les opérations à venir seront regroupées dans une transaction */
 
       try {
